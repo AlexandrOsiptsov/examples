@@ -5,6 +5,21 @@
 #include <vector>
 #include <sstream>
 
+
+// Пример использования директив проверки system-специфичных макросов
+#ifdef _WIN32
+    #include <windows.h>          // Windows
+    void clear_screen() {
+        system("cls");
+    }
+#else
+    #include <unistd.h>           // Unix/Linux/macOS
+    void clear_screen() {
+        system("clear");
+    }
+#endif
+
+
 void worker(int id) {
     std::ostringstream oss;
     oss << "Worker " << id << " started";
@@ -35,7 +50,7 @@ int main() {
 
 #ifdef __linux__
     SyslogLogger* syslog = new SyslogLogger();
-    Logger::add(syslog);
+    GLogger::add(syslog);
 #endif
 
     GLogger::info("Application started");

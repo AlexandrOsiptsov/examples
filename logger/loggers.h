@@ -64,7 +64,7 @@ public:
 #ifdef __linux__
 class SyslogLogger : public ILogger {
 public:
-    SyslogLogger() { openlog("MyApp", LOG_PID, LOG_USER); }
+    SyslogLogger() { openlog("CppLoggerApp", LOG_PID, LOG_USER); }
     ~SyslogLogger() { closelog(); }
 
     void log(LogLevel level, const std::string& message) override {
