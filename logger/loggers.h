@@ -39,24 +39,24 @@ class FileLogger : public ILogger {
     std::ofstream file;
 public:
     explicit FileLogger(const std::string& filename) : file(filename.c_str()) {
-        if (!file.is_open()) {
+        if (!this->file.is_open()) {
             std::cerr << "Cannot open log file: " << filename << std::endl;
         }
     }
 
     void log(LogLevel level, const std::string& message) override {
-        if (!file.is_open()) return;
+        if (!this->file.is_open()) return;
 
         std::time_t now = std::time(nullptr);
         char timebuf[100];
         std::strftime(timebuf, sizeof(timebuf), "%Y-%m-%d %H:%M:%S", std::localtime(&now));
 
-        file << timebuf << " [" << to_string(level) << "] " << message << std::endl;
-        file.flush();
+        this->file << timebuf << " [" << to_string(level) << "] " << message << std::endl;
+        this->file.flush();
     }
 
     ~FileLogger() {
-        if (file.is_open()) file.close();
+        if (this->file.is_open()) this->file.close();
     }
 };
 

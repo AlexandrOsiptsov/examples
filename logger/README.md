@@ -6,3 +6,8 @@
 g++ -std=c++17 main.cpp -o logger -lpthread
 ```
 
+Для просмотра системых логов в Linux:
+
+```sh
+sudo journalctl -t CppLoggerApp
+```
