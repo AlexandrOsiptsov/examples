@@ -75,6 +75,7 @@ SizedArr<SizedArr<const char*>> groupify(
     for (int i = 0; i < tc; ++i) {
         const size_t g_ind = ids[i] - 1;
         res.arr[g_ind].arr[res.arr[g_ind].size - group_sizes[g_ind]--] = tokens[i]; 
+        // не рекоммендую делать так на серьёзных проектах
     }
     delete[] group_sizes;
     delete[] ids;
