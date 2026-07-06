@@ -118,7 +118,8 @@
   <summary> <b> 5. C-style строки </b> </summary>
   <br>
 
-Что из себя представляет C-style строка (указатель на массив signed char с `\0` в конце). Понятие строкового литерала и его тип, разница между C/C++. Базовые функции над C-style-строками, описание их параметров и реализации из [glibc](https://github.com/bminor/glibc/blob/master/string): `strlen`, `strcpy`/`strncpy`, `strcat`/`strncat`, `strcmp`/`strncmp`, `strchr`/`strrchr`, `strstr`, `strspn`/`strcspn`, `strpbrk`, `strtok`.    
+Что из себя представляет C-style строка (указатель на массив signed char с `\0` в конце). Понятие строкового литерала и его тип, разница между C/C++. Базовые функции над C-style-строками, описание их параметров и реализации из [glibc](https://github.com/bminor/glibc/blob/master/string): `strlen`, `strcpy`/`strncpy`, `strcat`/`strncat`, `strcmp`/`strncmp`, `strchr`/`strrchr`, `strstr`, `strspn`/`strcspn`, `strpbrk`, `strtok`. 
+`isalpha`, `isdigit`, `isalnum`, `islower`, `isupper`, `isspace`, `ispunct`, `isxdigit`, `isprint`, `iscntrl`
 </details>
 
 <!-- ================================================================ -->
